@@ -1,83 +1,139 @@
-# Área Verde - Sistema de Gerenciamento de Áreas Verdes
+# AreaVerde 🌳
 
-## Descrição
-O "Área Verde" é um mini-projeto em Java que simula o gerenciamento de áreas verdes, como parques, praças ou reservas naturais. Ele foi criado como um exercício de Programação Orientada a Objetos (POO) para praticar conceitos como encapsulamento, classes, listas e repositórios em memória. O sistema permite que o usuário cadastre áreas verdes, avalie sua qualidade com notas de 1 a 5 em cinco critérios, liste todas as áreas registradas e veja detalhes de uma área específica. Tudo é feito por meio de uma interface simples de console, onde os dados são armazenados em listas estáticas (sem uso de banco de dados externo).
+**AreaVerde** é um sistema de console em Java desenvolvido como um **projeto institucional** no âmbito do curso de Programação Orientada a Objetos (POO) do **SENAI**. O projeto simula o gerenciamento de áreas verdes, como parques, praças ou reservas naturais, permitindo cadastrar áreas, avaliar sua qualidade com base em cinco critérios, listar áreas registradas e visualizar detalhes. Ele utiliza listas em memória (sem banco de dados) e uma interface de console interativa, servindo como exercício prático para conceitos de POO, como encapsulamento, classes e repositórios.
 
-O objetivo é oferecer uma ferramenta básica para registrar e avaliar áreas verdes, calculando médias de avaliações e exibindo informações organizadas.
+> **Nota**: Este projeto foi desenvolvido por Douglas Graça como parte das atividades do curso do SENAI, com foco em aprendizado prático de Java e sustentabilidade ambiental.
 
-## Funcionalidades
-O sistema possui cinco funcionalidades principais, acessadas por um menu interativo:
-1. **Listar Áreas Verdes:** Mostra todas as áreas cadastradas ou uma mensagem se não houver nenhuma.
-2. **Avaliar Área Verde:** Permite dar notas a uma área existente e associa a avaliação a ela.
-3. **Ver Detalhes de uma Área Verde:** Exibe informações completas de uma área específica, incluindo a média das avaliações.
-4. **Cadastrar uma Nova Área Verde:** Registra uma nova área com informações detalhadas.
-5. **Sair:** Encerra o programa.
+## 🎯 Objetivo do Projeto
 
-## Estrutura do Projeto
+Promover o aprendizado de Programação Orientada a Objetos através de um sistema simples que gerencia áreas verdes, incentivando a conscientização sobre a preservação ambiental e a gestão de espaços sustentáveis. O projeto simula um sistema real de registro e avaliação, com potencial para expansões futuras (ex.: integração com banco de dados ou interface gráfica).
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Java (JDK 8+)**: Linguagem principal, com foco em POO (encapsulamento, classes, objetos).
+- **Scanner**: Captura de entrada do usuário via console.
+- **ArrayList**: Armazenamento de dados em memória (áreas, avaliações, localizações).
+- **String.format**: Formatação de saídas de texto para exibição clara.
+- **Ferramentas de Desenvolvimento**: IDEs como IntelliJ, Eclipse ou VS Code (opcional).
+
+## 📂 Estrutura do Projeto
+
 O projeto está organizado em pacotes para separar responsabilidades:
-- **`main`:** Contém `Main.java`, a classe principal com o menu e as funções do sistema.
-- **`models`:** Inclui as classes de modelo que representam os dados:
-  - `AreaVerde.java`: Define uma área verde com atributos como nome, localização e avaliações.
-  - `Avaliacao.java`: Armazena notas de avaliação e calcula a média.
-  - `Localizacao.java`: Representa as coordenadas geográficas (latitude e longitude) de uma área.
-- **`repositories`:** Contém os repositórios em memória para simular persistência:
-  - `AreaVerdeRepository.java`: Gerencia a lista de áreas verdes.
-  - `AvaliacaoRepository.java`: Gerencia a lista de avaliações.
-  - `LocalizacaoRepository.java`: Gerencia a lista de localizações.
 
-## Tecnologias
-- **Linguagem:** Java
-- **Ferramentas:** 
-  - `Scanner` para capturar entrada do usuário.
-  - `ArrayList` para armazenar dados em memória.
-  - `String.format` para formatar as saídas de texto.
+```
+AreaVerde/
+├── src/
+│   ├── main/
+│   │   └── Main.java
+│   ├── models/
+│   │   ├── AreaVerde.java
+│   │   ├── Avaliacao.java
+│   │   └── Localizacao.java
+│   ├── repositories/
+│   │   ├── AreaVerdeRepository.java
+│   │   ├── AvaliacaoRepository.java
+│   │   └── LocalizacaoRepository.java
+└── README.md
+```
 
-## Como Executar
-1. **Pré-requisitos:** Ter o Java Development Kit (JDK) instalado (versão 8 ou superior).
-2. **Passos:**
-   - Clone o repositório: `git clone https://github.com/seu-usuario/area-verde.git`
-   - Entre no diretório: `cd area-verde`
-   - Compile todas as classes: `javac main/*.java models/*.java repositories/*.java`
-   - Execute o programa: `java main.Main`
-3. **Interação:** Use o menu no console digitando números de 0 a 4 para acessar as funções.
+### Descrição dos Arquivos
 
-## Exemplos de Uso
-Abaixo estão exemplos práticos de como usar cada funcionalidade do sistema:
+- **main/**:
+  - `Main.java`: Classe principal com o menu interativo e lógica de navegação do sistema.
+
+- **models/**:
+  - `AreaVerde.java`: Representa uma área verde com atributos como ID, nome, localização, tipo de vegetação, horários e atividades.
+  - `Avaliacao.java`: Armazena notas (1 a 5) para cinco critérios e calcula a média.
+  - `Localizacao.java`: Define coordenadas geográficas (latitude e longitude) de uma área.
+
+- **repositories/**:
+  - `AreaVerdeRepository.java`: Gerencia a lista de áreas verdes em memória.
+  - `AvaliacaoRepository.java`: Gerencia as avaliações associadas às áreas.
+  - `LocalizacaoRepository.java`: Gerencia as localizações das áreas.
+
+## 🚀 Como Configurar e Executar
+
+### Pré-requisitos
+- **Java Development Kit (JDK)**: Versão 8 ou superior.
+- **Ambiente de Desenvolvimento**: Terminal ou IDE (IntelliJ, Eclipse, VS Code).
+- **Git**: Para clonar o repositório.
+
+### Passos para Configuração
+
+1. **Clone o Repositório**:
+   ```bash
+   git clone https://github.com/DougBrando/AreaVerde.git
+   cd AreaVerde
+   ```
+
+2. **Compile o Projeto**:
+   ```bash
+   javac src/main/*.java src/models/*.java src/repositories/*.java
+   ```
+
+3. **Execute o Programa**:
+   ```bash
+   java -cp src main.Main
+   ```
+
+4. **Interaja com o Sistema**:
+   - Use o menu no console (digite números de 0 a 4) para acessar as funcionalidades.
+   - Siga as instruções exibidas para cadastrar, avaliar ou listar áreas verdes.
+
+## 🛠️ Funcionalidades
+
+O sistema oferece um menu interativo com cinco opções:
+1. **Listar Áreas Verdes**: Exibe todas as áreas cadastradas ou "Lista vazia" se não houver registros.
+2. **Avaliar Área Verde**: Permite atribuir notas (1 a 5) em cinco critérios (quantidade de árvores, qualidade do ar, ausência de poluição sonora, coleta de resíduos, facilidade de transporte público).
+3. **Ver Detalhes de uma Área Verde**: Mostra informações completas de uma área, incluindo nome, localização, vegetação, horários, atividades e média das avaliações.
+4. **Cadastrar uma Nova Área Verde**: Registra uma área com ID único, nome, localização, horários, vegetação e atividades.
+5. **Sair**: Encerra o programa.
+
+## 📸 Capturas de Tela
+
+| Menu Principal | Cadastro de Área | Avaliação de Área | Lista de Áreas | Detalhes de Área |
+|----------------|------------------|-------------------|----------------|------------------|
+| <img width="348" height="229" alt="image" src="https://github.com/user-attachments/assets/8209a214-b4ed-48a8-beb0-ba292a28a021" /> | <img width="889" height="249" alt="image" src="https://github.com/user-attachments/assets/2cd938b3-98de-45d0-b916-b0872f569514" /> | <img width="361" height="244" alt="image" src="https://github.com/user-attachments/assets/84ef490e-610c-44b5-8105-4c21e14fc0a8" /> | <img width="669" height="269" alt="image" src="https://github.com/user-attachments/assets/f384d76a-372d-4125-992a-6267a3088033" /> | <img width="666" height="293" alt="image" src="https://github.com/user-attachments/assets/a01e0842-fdb5-4be2-953b-2d40440a4cb1" /> |
+
+### Descrição das Capturas
+1. **Menu Principal**: Tela inicial do console com as opções de 0 a 4.
+2. **Cadastro de Área**: Exemplo de entrada de dados para cadastrar uma nova área verde (ex.: Parque Central).
+3. **Avaliação de Área**: Tela mostrando a atribuição de notas para uma área existente.
+4. **Lista de Áreas**: Saída com várias áreas verdes listadas, incluindo IDs e nomes.
+5. **Detalhes de Área**: Informações completas de uma área, com localização, vegetação e média de avaliações.
+
+## 📋 Exemplos de Uso
 
 ### 1. Cadastrar uma Nova Área Verde (Opção 4)
-Permite registrar uma nova área com informações detalhadas.
- ```text
- Opção: 4
- Cadastre uma area verde
- Digite o Nome: Parque Central
- Digite latitude: -23.5
- Digite longitude: -46.6
- Digite o horario de atendimento (ex.: 06:00-18:00): 08:00-18:00
- Digite o tipo de vegetação (ex.: árvores, arbustos, grama): árvores
- Digite as atividades disponiveis (separadas por vírgula, ex.: caminhada, piquenique): caminhada, piquenique
- Area Verde cadastrada com sucesso! ID: 1
+```text
+Opção: 4
+Cadastre uma área verde
+Digite o Nome: Parque Central
+Digite latitude: -23.5
+Digite longitude: -46.6
+Digite o horário de atendimento (ex.: 06:00-18:00): 08:00-18:00
+Digite o tipo de vegetação (ex.: árvores, arbustos, grama): árvores
+Digite as atividades disponíveis (separadas por vírgula, ex.: caminhada, piquenique): caminhada, piquenique
+Área Verde cadastrada com sucesso! ID: 1
 ```
- O sistema cria uma nova área com ID único e salva em memória.
 
 ### 2. Avaliar Área Verde (Opção 2)
 ```text
-Permite dar notas a uma área existente.
-Digite o id da area que deseja avaliar: 1
+Opção: 2
+Digite o ID da área que deseja avaliar: 1
 Avaliando: Parque Central, notas de 1 a 5
-Quantidade de arvores: 4
+Quantidade de árvores: 4
 Qualidade do Ar: 5
-Ausencia de Poluição Sonora: 3
-Coleta de Residuos: 4
-Facilidade de Transporte Publico: 5
-Avaliação realizada com sucesso!!
+Ausência de Poluição Sonora: 3
+Coleta de Resíduos: 4
+Facilidade de Transporte Público: 5
+Avaliação realizada com sucesso!
 ```
-- As notas são salvas e associadas ao "Parque Central" (ID 1). A média será calculada automaticamente.
 
 ### 3. Listar Áreas Verdes (Opção 1)
-Mostra todas as áreas cadastradas.
 ```text
 Opção: 1
-Lista de Areas Verdes
+Lista de Áreas Verdes
 Detalhes da Área Verde:
 ID: 1
 Nome: Parque Central
@@ -87,14 +143,11 @@ Horários: 08:00-18:00
 Atividades Disponíveis: caminhada, piquenique
 Média das Avaliações: 4.20
 ```
-
-- Se não houver áreas, exibe "Lista vazia".
 
 ### 4. Ver Detalhes de uma Área Verde (Opção 3)
-Exibe informações completas de uma área específica.
 ```text
 Opção: 3
-Digite o ID da area verde que gostaria de ver os detalhes: 1
+Digite o ID da área verde que gostaria de ver os detalhes: 1
 Detalhes da Área Verde:
 ID: 1
 Nome: Parque Central
@@ -104,16 +157,16 @@ Horários: 08:00-18:00
 Atividades Disponíveis: caminhada, piquenique
 Média das Avaliações: 4.20
 ```
-- Mostra todos os dados, incluindo a média calculada (ex.: 4.2 após a avaliação acima).
 
 ### 5. Sair (Opção 0)
-Encerra o programa.
 ```text
 Opção: 0
 Encerrando a sessão...
 ```
+   
 
-- Finaliza a execução.
+## 🌍 Parceiros Institucionais
 
-## Contribuições
-Esse é um projeto educacional simples. Sugestões de melhorias, como adicionar validação de entrada ou persistência em arquivo, são bem-vindas! Abra um pull request ou issue se quiser contribuir.
+- **SENAI**
+- **Prefeitura de Joinville**
+- **Lab365**
